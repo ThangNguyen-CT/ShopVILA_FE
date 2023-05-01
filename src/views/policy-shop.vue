@@ -9,6 +9,7 @@ export default {
     data() {
         return {
             policy: '',
+            contentPolicy:'Chính sách bảo hành'
         }
     },
     computed: {
@@ -27,49 +28,54 @@ export default {
                 item.classList.remove('active');
                 if(item.getAttribute('data') == link){
                     item.classList.add('active');
+                   this.contentPolicy = item.getAttribute('data-value')
                 } 
             });
+        
         }
     },
     mounted(){
         this.link_policy(this.$route.params.slug);
+        window.scrollTo(0,0);
     }
 }
 </script>
 <template>
-    <router-link to="/">
-        Trở về
-    </router-link>
+    <nav class="nav-link">
+        <router-link to="/">
+            Trang chủ / {{ contentPolicy }}
+        </router-link>
+    </nav>
     <h1 class="text-center">Thông tin chính sách</h1>
     <div class="page_policy d-flex">
         <div class="page_policy_left">
             <ul class="list_item_policy">
-                <li class="item_policy active" @click="link_policy('policyBH')" data="policyBH">
+                <li class="item_policy active" @click="link_policy('policyBH')" data="policyBH" data-value="Chính sách bảo hành">
                     <router-link to="">
                         Chính sách bảo hành
                     </router-link>
                 </li>
-                <li class="item_policy" @click="link_policy('policyBM')" data="policyBM">
+                <li class="item_policy" @click="link_policy('policyBM')" data="policyBM" data-value="Chính sách bảo mật">
                     <router-link to="">
                         Chính sách bảo mật
                     </router-link>
                 </li>
-                <li class="item_policy" @click="link_policy('policyDT')" data="policyDT">
+                <li class="item_policy" @click="link_policy('policyDT')" data="policyDT" data-value="Chính sách đổi trả">
                     <router-link to="">
                         Chính sách đổi trả
                     </router-link>
                 </li>
-                <li class="item_policy" @click="link_policy('policyKHTT')" data="policyKHTT">
+                <li class="item_policy" @click="link_policy('policyKHTT')" data="policyKHTT" data-value="Chính sách khách hàng thân thiết">
                     <router-link to="">
                         Chính sách khách hàng thân thiết
                     </router-link>
                 </li>
-                <li class="item_policy" @click="link_policy('policyVC')" data="policyVC">
+                <li class="item_policy" @click="link_policy('policyVC')" data="policyVC" data-value="Chính sách vận chuyển">
                     <router-link to="">
                         Chính sách vận chuyển
                     </router-link>
                 </li>
-                <li class="item_policy" @click="link_policy('policyPTTT')" data="policyPTTT">
+                <li class="item_policy" @click="link_policy('policyPTTT')" data="policyPTTT" data-value="Phương thức thanh toán">
                     <router-link to="">
                         Phương thức thanh toán
                     </router-link>
@@ -82,6 +88,11 @@ export default {
     </div>
 </template>
 <style scoped>
+.nav-link,.nav-link a{
+    color: black;
+    text-decoration: none;
+
+}
 .page_policy_left {
     width: 700px;
 }

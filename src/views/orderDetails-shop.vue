@@ -35,7 +35,7 @@ export default {
                 localStorage.removeItem('cartItems');
                 localStorage.removeItem('infoOrder');
                 alert('Đã xác nhận mua hàng vui lòng chờ cửa hàng xác nhận');
-                this.$router.push({ name: 'search-order' });
+                location.href = '/search-order';
             } catch (error) {
                 console.log(error);
             }

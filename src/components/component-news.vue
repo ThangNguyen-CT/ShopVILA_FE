@@ -5,6 +5,11 @@
 
             }
         },
+        methods:{
+            gotoblog(){
+                this.$router.push('/blog');
+            }
+        }
 
     }
 </script>
@@ -18,15 +23,15 @@
                 <router-link class="view-add" to="/blog">Xem thêm</router-link>
             </div>
             <ul class="news-tralver-list d-flex justify-content-between">
-                <li class="news-tralver-list-item">
+                <li class="news-tralver-list-item" @click="gotoblog()">
                     <img src="https://media.mia.vn/uploads/blog-du-lich/lich-trinh-kham-pha-ha-giang-3n2d-chi-tiet-cho-ai-di-lan-dau-1669276932.jpg" alt="anh1">
                     <span class="news-text">Lịch trình khám phá Hà Giang 3N2Đ chi tiết cho ai đi lần đầu</span>
                 </li>
-                <li class="news-tralver-list-item">
+                <li class="news-tralver-list-item" @click="gotoblog()">
                     <img src="https://media.mia.vn/uploads/blog-du-lich/bo-tui-ngay-lich-trinh-kham-pha-ha-giang-3n2d-cuc-chi-tiet-1669275931.jpg" alt="anh1">
                     <span class="news-text">Bỏ túi ngay lịch trình khám phá Hà Giang 3N2Đ cực chi tiết</span>
                 </li>
-                <li class="news-tralver-list-item">
+                <li class="news-tralver-list-item" @click="gotoblog()">
                     <img src="https://media.mia.vn/uploads/blog-du-lich/ngam-hoang-hon-tren-song-mekong-va-thuong-ngoan-canh-sac-ruc-ro-1669275097.jpg" alt="anh1">
                     <span class="news-text">Ngắm hoàng hôn trên sông Mekong và thưởng ngoạn cảnh sắc rực rỡ</span>
                 </li>

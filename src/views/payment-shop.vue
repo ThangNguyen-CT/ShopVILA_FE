@@ -105,6 +105,7 @@ export default {
         async pay() {
             this.cartItem.address = this.name_city + ", " + this.name_districts + ", " + this.name_wards + ", " + this.textAdress;
             localStorage.removeItem('infoOrder');
+            localStorage.removeItem('details');
             localStorage.setItem('infoOrder', JSON.stringify(this.cartItem));
             this.$router.push({ name: 'order-details' });
         }

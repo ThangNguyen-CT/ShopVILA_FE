@@ -60,7 +60,7 @@ export default {
         <div class="list-header d-flex justify-content-between align-items-center">
             <div class="logo">
                 <a href="/">
-                    <img src="../assets/img/logo-vila.png" alt="logo">
+                    <img src="../assets/img/anh.jpg" alt="logo" >
                 </a>
             </div>
             <ul class="list-link d-flex justify-content-around">
@@ -71,8 +71,7 @@ export default {
                     <li class="list-link_item">Balo</li>
                 </a>
                 <li class="list-link_item">Túi xách</li>
-                <li class="list-link_item">Phụ kiện</li>
-                <li class="list-link_item">Sale 50%</li>
+                <li class="list-link_item">Phụ kiện</li>    
                 <li class="list-link_item">Cẩm nang du lịch</li>
                 <li class="list-link_item">Tin tức</li>
             </ul>
@@ -112,8 +111,9 @@ export default {
 }
 
 .logo img {
-    width: 400px;
-    height: 80px;
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
 }
 
 .list-link {
