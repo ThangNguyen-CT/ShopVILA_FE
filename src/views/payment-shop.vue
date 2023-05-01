@@ -90,6 +90,7 @@ export default {
         deleteCartItem(index) {
             this.dataCart.splice(index, 1);
             localStorage.setItem('cartItems', JSON.stringify(this.dataCart));
+            localStorage.removeItem('details');
             location.reload();
         },
         getQuatity(index) {
