@@ -42,8 +42,11 @@ export default {
             location.href = `/details/${item.slug}`;
             this.searchproduct = '';
         },
-        gotosearchoder(){
+        gotosearchorder(){
             this.$router.push('/search-order');
+        },
+        gotoorderinfo(){
+            this.$router.push('/findId-order');
         },
         gotoblog(){
             this.$router.push('/blog');
@@ -77,10 +80,8 @@ export default {
                 <a href="/listproduct/Balo">
                     <li class="list-link_item">Balo</li>
                 </a>
-                <a href="/listproduct/Tuisach">
-                    <li class="list-link_item">Túi sách</li>
-                </a>
-                <li class="list-link_item" @click="gotosearchoder()" >Tìm kiếm đơn hàng</li>    
+                <li class="list-link_item" @click="gotosearchorder()">Lịch sử đặt hàng</li>    
+                <li class="list-link_item" @click="gotoorderinfo()">Đơn hàng</li>   
                 <li class="list-link_item" @click="gotoblog()">Cẩm nang du lịch</li>
                 <li class="list-link_item">Tin tức</li>
             </ul>

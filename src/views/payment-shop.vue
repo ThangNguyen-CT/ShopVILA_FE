@@ -15,8 +15,7 @@ export default {
             cartItem: {
                 products: [],
                 paymentIntent: 'COD',
-                statusPayment: 'No',
-                sex: 'male',
+                sex: 'Nam',
                 address: '',
                 name: '',
                 e: '',
@@ -190,9 +189,9 @@ export default {
         <div class="form-pay">
             <form class="was-validated" action="" @submit.prevent="pay()">
                 <div class="mb-3 mt-3">
-                    <input type="radio" value="male" id="male" name="gender" style="margin-right: 8px;" checked
+                    <input type="radio" value="Nam" id="male" name="gender" style="margin-right: 8px;" checked
                         @click="getGender"><label for="male" style="margin-right: 8px;">Anh</label>
-                    <input type="radio" value="female" id="female" name="gender" style="margin-right: 8px;"
+                    <input type="radio" value="Nữ" id="female" name="gender" style="margin-right: 8px;"
                         @click="getGender"><label for="female">Chị</label>
                 </div>
                 <div class="mb-3 mt-3 form-style">

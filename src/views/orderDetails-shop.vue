@@ -30,12 +30,12 @@ export default {
         async AcssescPay() {
             try {
                 this.checkLoad = true;
-                await OrderService.create(this.dataOrder.info);
+                const response = await OrderService.create(this.dataOrder.info);
                 this.checkLoad = false;
                 localStorage.removeItem('cartItems');
                 localStorage.removeItem('infoOrder');
-                alert('Đã xác nhận mua hàng vui lòng chờ cửa hàng xác nhận');
-                location.href = '/search-order';
+                alert(`Đã xác nhận mua hàng mã đơn hàng của bạn là ${response._id} hãy ghi nhớ mã đơn hàng để kiểm tra đơn hàng bạn nhé !!!`);
+                location.href = '/findId-order';
             } catch (error) {
                 console.log(error);
             }

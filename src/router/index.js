@@ -36,6 +36,12 @@ const routes = [{
             import ("@/views/SearchOrder-shop.vue"),
     },
     {
+        path: "/findId-order",
+        name: "findId-order",
+        component: () =>
+            import ("@/views/order-info.vue"),
+    },
+    {
         path: "/order-details",
         name: "order-details",
         component: () =>

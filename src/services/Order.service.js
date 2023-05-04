@@ -9,6 +9,9 @@ class OrderService {
     async get(sdt) {
         return (await this.http.get(`/${sdt}`)).data;
     }
+    async getbyId(id) {
+        return (await this.http.get(`/find/${id}`)).data;
+    }
     async create(data) {
         return (await this.http.post("/", data)).data;
     }
