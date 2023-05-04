@@ -1,17 +1,25 @@
 <script>
 import OrderService from '../services/Order.service';
+import loadPage from '../components/loadPage.vue';
 export default {
     data() {
         return {
+            checkload : false,
             sdt: '',
             order: {}
         }
     },
+    components: {
+        loadPage
+    },
     methods: {
         async getorder() {
             try {
-                console.log(this.sdt);
-                this.order = await OrderService.get(this.sdt);
+                if (this.sdt != '') {
+                    this.checkload = true;
+                    this.order = await OrderService.get(this.sdt);
+                    this.checkload = false;
+                }
             } catch (error) {
                 console.log(error);
             }
@@ -20,6 +28,7 @@ export default {
 }
 </script>
 <template>
+    <loadPage v-if="checkload"></loadPage>
     <div class="container">
         <h3>Kiểm tra đơn hàng</h3>
         <div class="phone">
@@ -27,44 +36,61 @@ export default {
             <button class="btn btn-primary" @click="getorder()">Tìm</button>
         </div>
         <div class="wrapper-order">
-            <div v-for="(item, index) in order" class="order">
+            <div v-for="(item, index) in order" class="order" v-if="order.length != 0">
                 <div class="order-info">
-                    <span>Mã đơn hàng : {{ item._id }}</span><br>
-                    <span class="name">Khách hàng :{{ item.name }}</span><br>
-                    <span>SDT : {{ item.m }}</span><br>
-                    <span>Gmail : {{ item.e }}</span><br>
-                    <span>Địa chỉ nhận hàng : {{ item.address }}</span><br>
-                    <span>Trạng thái đơn hàng : {{ item.orderStatus }}</span><br>
-                    <span>Phương thức thanh toán : {{ item.paymentIntent }}</span><br>
-                    <span>Tổng tiền : {{ item.totalprice }} đ</span><br>  
+                    <p class="ellipsis" style="width: 200px;">Mã đơn hàng : {{ item._id }}</p><br>
+                    <p class="ellipsis" style="width: 200px;">Khách hàng :{{ item.name }}</p><br>
+                    <p class="ellipsis" style="width: 100px;">SDT : {{ item.m }}</p><br>
+                    <p class="ellipsis" style="width: 150px;">Gmail : {{ item.e }}</p><br>
+                    <p class="ellipsis" style="width: 300px;">Địa chỉ nhận hàng : {{ item.address }}</p><br>
+                    <p>Trạng thái đơn hàng : {{ item.orderStatus }}</p><br>
+                    <p>Phương thức thanh toán : {{ item.paymentIntent }}</p><br>
+                    <p>Tổng tiền : {{ item.totalprice }} đ</p><br>
                 </div>
                 <br>
+            </div>
+            <div v-else>
+                <h6 class="text-center">Chưa có đơn hàng</h6>
             </div>
         </div>
     </div>
 </template>
 <style scoped>
-.container{
+.order-info p{
+    margin: 0;
+    padding: 0;
+}
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+.container {
     height: 500px;
 }
-.phone{
+
+.phone {
     display: flex;
     justify-content: center;
 }
-.phone input{
+
+.phone input {
     width: 70%;
-    margin:0px 8px 10px 0px 
+    margin: 0px 8px 10px 0px
 }
+
 .wrapper-order {
     padding: 10px;
     background-color: aliceblue;
     overflow-y: scroll;
     height: 300px;
 }
-.order{
+
+.order {
     border-bottom: 1px solid #888888;
 
 }
+
 .wrapper-order::-webkit-scrollbar {
     width: 4px;
 }
@@ -76,5 +102,4 @@ export default {
 .wrapper-order::-webkit-scrollbar-thumb {
     background-color: #000;
     border-radius: 50px;
-}
-</style>
+}</style>

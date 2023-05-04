@@ -41,6 +41,13 @@ export default {
             localStorage.setItem('details', JSON.stringify(item));
             location.href = `/details/${item.slug}`;
             this.searchproduct = '';
+        },
+        gotosearchoder(){
+            this.$router.push('/search-order');
+        },
+        gotoblog(){
+            this.$router.push('/blog');
+
         }
     },
     mounted() {
@@ -70,9 +77,11 @@ export default {
                 <a href="/listproduct/Balo">
                     <li class="list-link_item">Balo</li>
                 </a>
-                <li class="list-link_item">Túi xách</li>
-                <li class="list-link_item">Phụ kiện</li>    
-                <li class="list-link_item">Cẩm nang du lịch</li>
+                <a href="/listproduct/Tuisach">
+                    <li class="list-link_item">Túi sách</li>
+                </a>
+                <li class="list-link_item" @click="gotosearchoder()" >Tìm kiếm đơn hàng</li>    
+                <li class="list-link_item" @click="gotoblog()">Cẩm nang du lịch</li>
                 <li class="list-link_item">Tin tức</li>
             </ul>
             <div class="list-icon d-flex">
@@ -133,15 +142,13 @@ export default {
 
 .list-link .list-link_item {
     margin: 0 12px;
-}
-
-.list-link .list-link_item a {
     text-decoration: none;
     color: var(--color--white--);
 }
 
 .list-link_item:hover {
     opacity: 0.5;
+    cursor: pointer;
 }
 
 .list-icon i {

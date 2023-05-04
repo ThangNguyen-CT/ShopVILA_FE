@@ -206,7 +206,7 @@ export default {
                     <div class="invalid-feedback">Không để rỗng trường này</div>
                 </div>
                 <div class="mb-3 mt-3 form-style">
-                    <input type="text" class="form-control" id="email" placeholder="Địa chỉ email (bắt buộc)" name="email"
+                    <input type="email" class="form-control" id="email" placeholder="Địa chỉ email (bắt buộc)" name="email"
                         required v-model="cartItem.e">
                     <div class="invalid-feedback">Không để rỗng trường này</div>
                 </div>
