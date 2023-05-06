@@ -7,7 +7,7 @@ export default {
                 "title": "An giang",
                 "decr": "Là mảnh ghép của vùng tứ giác Long Xuyên, An Giang sở hữu vẻ đẹp chân chất, giản đơn đậm nét miền Tây sông nước. Không chỉ nổi tiếng với miếu Bà Chúa Xứ, Rừng tràm Trà Sư hay dãy Thất Sơn, vùng đất này còn là điểm giao thoa của nhiều nền văn hóa lớn. Đừng bỏ lỡ cơ hội được một lần khám phá An Giang để tìm ra những điều đặc sắc của vùng đất linh thiêng này bạn nhé.",
                 "img": ["https://media.mia.vn/uploads/blog-du-lich/an-giang-cover-1659581459.jpg", "https://media.mia.vn/uploads/blog-du-lich/mieu-ba-chua-xu-nui-sam-chau-doc-diem-den-tam-linh-tru-danh-nam-bo-1659708245.jpg", "https://media.mia.vn/uploads/blog-du-lich/that-son-bay-nui-vung-dat-tran-giu-linh-hon-1660412539.jpg", "https://media.mia.vn/uploads/blog-du-lich/chua-van-linh-nui-cam-dia-diem-linh-thieng-o-dat-an-giang-1659887881.jpg"],
-                "addressFomus": ["Du thuyền ninh kiều", "Chợ nỗi cái răng", "Thiền viện trúc lắm"],
+                "addressFomus": ["Miếu bà","Thất sơn - bảy núi", "Núi câm"],
                 "slug": 'angiang'
             },
             {
