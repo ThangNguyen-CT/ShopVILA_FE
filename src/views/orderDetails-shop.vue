@@ -81,7 +81,6 @@ export default {
                 <div>
                     <span>Hình thức thanh toán : {{ dataOrder.info.paymentIntent }}</span>
                     <span>Tổng giá tiền đơn hàng : {{ dataOrder.info.totalprice }}</span><br>
-                    <span> Trạng thái thanh toán :{{ dataOrder.info.statusPayment }}</span>
                 </div>
             </div>
             <button class="btn btn-primary" style="margin-right: 10px;" @click="AcssescPay()">Xác nhận</button>

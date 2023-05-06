@@ -35,10 +35,10 @@ export default {
     <loadPage v-if="checkload"></loadPage>
     <div class="container">
         <h3>Kiểm tra đơn hàng</h3>
-        <div class="idorder">
+        <form  class="idorder" @submit.prevent="getorderbyid()">
             <input type="text" name="idorder" id="idorder" placeholder="Nhập mã đơn hàng..." v-model="id">
-            <button class="btn btn-primary" @click="getorderbyid()">Tìm</button>
-        </div>
+            <button class="btn btn-primary" type="submit" style="margin-bottom: 8px;">Tìm</button>
+        </form>
         <div v-if="showcheck" class="order">
             <div class="order-info">
                 <p class="ellipsis" style="width: 200px;"><span>Mã đơn hàng : </span>{{ orderinfo._id }}</p><br>
@@ -55,7 +55,7 @@ export default {
                 <p><span>Tổng tiền : </span>{{ orderinfo.totalprice }} đ</p><br>
             </div>
         </div>
-        <div v-else>
+        <div v-else style="height: 205px;">
             <h6 class="text-center">Chưa có đơn hàng</h6>
         </div>
     </div>
@@ -70,10 +70,13 @@ export default {
     width: 70%;
     margin: 0px 8px 10px 0px
 }
-
+.order-info{
+    height: 100%;
+}
 .order-info p {
     margin: 0;
     padding: 0;
+
 }
 
 .order-info p span {
@@ -87,11 +90,12 @@ export default {
 }
 
 .container {
-    height: 500px;
+    height: 100%;
 }
 
-.order {
-    border-bottom: 1px solid #888888;
-
+.order {    
+    padding: 10px;
+    border:1px solid #888888;
+    height: 100%;
 }
 </style>

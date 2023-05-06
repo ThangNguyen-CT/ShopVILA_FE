@@ -42,69 +42,77 @@ export default {
             location.href = `/details/${item.slug}`;
             this.searchproduct = '';
         },
-        gotosearchorder(){
+        gotosearchorder() {
             this.$router.push('/search-order');
         },
-        gotoorderinfo(){
+        gotoorderinfo() {
             this.$router.push('/findId-order');
         },
-        gotoblog(){
+        gotoblog() {
             this.$router.push('/blog');
 
         }
     },
     mounted() {
         this.getdata();
-        window.addEventListener('keydown', (e) => {
-            if (e.key == 'Enter') {
-                if(this.searchproduct != ''){
-                    this.gotolistproduct();
-                }
-            }
-        });
     }
 }
 </script>
 <template>
-    <header class="header">
-        <div class="list-header d-flex justify-content-between align-items-center">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--color--main--);">
+        <div class="container-fluid">
             <div class="logo">
                 <a href="/">
-                    <img src="../assets/img/anh.jpg" alt="logo" >
+                    <img src="../assets/img/anh.jpg" alt="logo">
                 </a>
             </div>
-            <ul class="list-link d-flex justify-content-around">
-                <a href="/listproduct/Vali">
-                    <li class="list-link_item">Vali</li>
-                </a>
-                <a href="/listproduct/Balo">
-                    <li class="list-link_item">Balo</li>
-                </a>
-                <li class="list-link_item" @click="gotosearchorder()">Lịch sử đặt hàng</li>    
-                <li class="list-link_item" @click="gotoorderinfo()">Đơn hàng</li>   
-                <li class="list-link_item" @click="gotoblog()">Cẩm nang du lịch</li>
-                <li class="list-link_item">Tin tức</li>
-            </ul>
-            <div class="list-icon d-flex">
-                <div class="icon-search d-flex flex-row-reverse">
-                    <button class="btn-search"><i class="fas fa-search" @click="gotolistproduct()"></i></button>
-                    <input class="input-search" type="text" id="search-text-top" placeholder="Tìm kiếm sản phẩm"
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left: 8px;">
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="/">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="/listproduct/Vali">Vali</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="/listproduct/Balo">Balo</a>
+                    </li>
+                    <li class="nav-item" @click="gotosearchorder()">
+                        <span class="navbar-brand"> Lịch sử đặt hàng</span>
+                    </li>
+                    <li class="nav-item" @click="gotoorderinfo()">
+                        <span class="navbar-brand"> Đơn hàng</span>
+                    </li>
+                    <li class="nav-item" @click="gotoblog()">
+                        <span class="navbar-brand"> Cẩm nang du lịch</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="navbar-brand">Tin tức</span>
+                    </li>
+                </ul>
+                <form class="d-flex" style="position: relative;" @submit.prevent="gotolistproduct()">
+                    <input class="form-control me-2 input-search" type="text" placeholder="Tìm kiếm sản phẩm"
                         v-model="searchproduct">
+                    <button class="btn btn-search" type="submit"><i class="fas fa-search"></i></button>
                     <div class="content-search" v-if="searchproduct != ''">
                         <div v-for="(item, index) in fiilterSearchProduct" @click="gotoProductDetails(item)">
                             {{ item.title }}
                         </div>
                     </div>
-                </div>
+                </form>
                 <div class="icon-cart" @click="gotocart()">
-                    <i class="fa fa-cart-shopping"></i>
                     <div>
+                        <i class="fa fa-cart-shopping"></i>
                         <p class="text-center">{{ getlength }}</p>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
+    </nav>
 </template>
 <style scoped>
 /* Header */
@@ -114,80 +122,21 @@ export default {
     background-color: var(--color--main--);
 }
 
-.list-header {
-    padding: 0 80px;
-    width: 100%;
-    height: 100%;
-}
-
 .logo img {
     width: 300px;
     height: 40px;
     border-radius: 10px;
 }
 
-.list-link {
-    list-style-type: none;
-    color: var(--color--white--);
-    font-size: var(--size--text--);
-    margin: 0;
-    padding-left: 0;
-    height: 100%;
-    align-items: center;
-}
-
-.list-link a {
-    text-decoration: none;
-    color: var(--color--white--);
-}
-
-.list-link .list-link_item {
-    margin: 0 12px;
-    text-decoration: none;
-    color: var(--color--white--);
-}
-
-.list-link_item:hover {
-    opacity: 0.5;
+.navbar-nav li span,
+.navbar-nav li a {
     cursor: pointer;
+    font-size: 16px;
 }
 
-.list-icon i {
-    color: var(--color--white--);
-    font-size: var(--size--icon--);
-    margin: 0 8px;
-}
-
-#search-text-top {
-    outline: none;
-    border-radius: 10px;
-    border: none;
-    height: 40px;
-}
-
-.icon-search i:hover,
-.icon-cart i:hover {
-    opacity: 0.6;
-    position: relative;
-}
-
-.icon-cart div {
-    position: absolute;
-    right: -5px;
-    top: -5px;
-    background-color: #fff;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-}
-
-.icon-cart div p {
-    font-size: 15px;
-    color: red;
-}
-
-.icon-cart {
-    margin: auto;
+.navbar-nav li:hover span,
+.navbar-nav li:hover a {
+    color: #000;
 }
 
 .btn-search {
@@ -204,12 +153,10 @@ export default {
     height: 50px;
     width: 200px;
     border-style: none;
-    padding: 10px;
     font-size: 18px;
     outline: none;
-    border-radius: 25px;
+    border-radius: 10px;
     transition: all .1s ease-in-out;
-    padding-right: 40px;
     color: var(--color--main--);
 }
 
@@ -219,11 +166,6 @@ export default {
     font-weight: 100;
 }
 
-
-.list-icon {
-    position: relative;
-}
-
 .content-search {
     border-radius: 10px;
     position: absolute;
@@ -231,7 +173,6 @@ export default {
     max-height: 200px;
     overflow-y: scroll;
     background-color: #fff;
-    right: 80px;
     top: 100%;
     z-index: 1;
 }
@@ -256,5 +197,71 @@ export default {
 .content-search div:hover {
     cursor: pointer;
     background-color: var(--color--main--);
+}
+
+.icon-cart i {
+    position: relative;
+}
+
+.icon-cart i {
+    font-size: 18px;
+    color: #fff;
+}
+
+.icon-cart p {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    background-color: #fff;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    color: var(--color--main--);
+}
+
+@media only screen and (max-width: 600px) {
+    .icon-cart p {
+        top: 90%;
+        left: 30px;
+    }
+    .nav-item{
+        padding: 3px;
+    }
+    .nav-item:hover{
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 3px;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width:768px) {
+    .icon-cart p {
+        top: 90%;
+        left: 30px;
+    }
+    .nav-item{
+        padding: 3px;
+    }
+    .nav-item:hover{
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 3px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 768px) and (max-width:992px) {
+    .icon-cart p {
+        top: 90%;
+        left: 30px;
+    }
+    .nav-item{
+        padding: 3px;
+    }
+    .nav-item:hover{
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 3px;
+    }
 }
 </style>

@@ -108,11 +108,6 @@ export default {
 <template>
     <loadPage v-if="loadPage"></loadPage>
     <div class="container" style="min-height: 800px;">
-        <nav>
-            <router-link to="/">
-                Trang chủ
-            </router-link>
-        </nav>
         <BannerShop :img="`https://media.mia.vn/uploads/sale-off-up-to-50-1680656693.jpg`"></BannerShop>
         <div class="sort mt-4">
             <div class="filter">

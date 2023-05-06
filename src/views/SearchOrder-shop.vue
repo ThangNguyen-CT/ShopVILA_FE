@@ -30,11 +30,11 @@ export default {
 <template>
     <loadPage v-if="checkload"></loadPage>
     <div class="container">
-        <h3>Kiểm tra đơn hàng</h3>
-        <div class="phone">
+        <h3>Lịch sữ đặt hàng</h3>
+        <form class="phone" @submit.prevent="getorder()">
             <input type="text" name="phone" id="phone_search" placeholder="Nhập số điện thoại" v-model="sdt">
-            <button class="btn btn-primary" @click="getorder()">Tìm</button>
-        </div>
+            <button type="submit" class="btn btn-primary">Tìm</button>
+        </form>
         <div class="wrapper-order">
             <div v-for="(item, index) in order" class="order" v-if="order.length != 0">
                 <div class="order-info">
@@ -83,7 +83,8 @@ export default {
     padding: 10px;
     background-color: aliceblue;
     overflow-y: scroll;
-    height: 300px;
+    height: 400px;
+    border-radius: 10px;
 }
 
 .order {

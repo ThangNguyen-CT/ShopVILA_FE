@@ -12,15 +12,14 @@ export default {
 }
 </script>
 <template>
-    <h1>Test B1906598</h1>
     <headerVue></headerVue>
     <div class="main">
         <router-view></router-view>
     </div>
     <div class="footer">
         <div class="top-footer">
-            <ul class="d-flex justify-content-around">
-                <li class="d-flex">
+            <ul class="d-flex flex-wrap" style="padding: 32px 12px 0px 12px;">
+                <li class="d-flex col-xs-12 col-sm-12 col-md-3">
                     <div class="img-box">
                         <img src="https://mia.vn/images/policy/warranty.svg" alt="mia.vn">
                     </div>
@@ -29,7 +28,7 @@ export default {
                         <span class="title-box">Trên toàn hệ thống</span>
                     </div>
                 </li>
-                <li class="d-flex">
+                <li class="d-flex col-xs-12 col-sm-12 col-md-3">
                     <div class="img-box">
                         <img src="https://mia.vn/images/policy/auth.svg" alt="mia.vn">
                     </div>
@@ -38,7 +37,7 @@ export default {
                         <span class="title-box">Hoàn tiền nếu phát hiện hàng giả</span>
                     </div>
                 </li>
-                <li class="d-flex">
+                <li class="d-flex col-xs-12 col-sm-12 col-md-3">
                     <div class="img-box">
                         <img src="https://mia.vn/images/policy/return.svg" alt="mia.vn">
                     </div>
@@ -47,7 +46,7 @@ export default {
                         <span class="title-box">Nếu không hài lòng</span>
                     </div>
                 </li>
-                <li class="d-flex">
+                <li class="d-flex col-xs-12 col-sm-12 col-md-3">
                     <div class="img-box">
                         <img src="https://mia.vn/images/policy/cashback.svg" alt="mia.vn">
                     </div>
@@ -59,8 +58,8 @@ export default {
             </ul>
         </div>
         <div class="end-footer">
-            <div class="d-flex justify-content-around" style="padding-top: 32px;">
-                <div class="d-flex flex-column">
+            <div class="d-flex flex-wrap" style="padding: 32px 12px 0px 12px;">
+                <div class="d-flex col-xs-12 col-sm-6 col-md-3">
                     <div class="sub-end-footer">
                         <ul>
                             <h5>Hệ thống siêu thị</h5>
@@ -72,7 +71,7 @@ export default {
                         </ul>
                     </div>
                 </div>
-                <div class="d-flex flex-column">
+                <div class="d-flex col-xs-12 col-sm-6 col-md-3">
                     <div class="sub-end-footer">
                         <ul>
                             <h5>Hỗ trợ khách hàng</h5>
@@ -109,7 +108,7 @@ export default {
                         </ul>
                     </div>
                 </div>
-                <div class="d-flex flex-column">
+                <div class="d-flex col-xs-12 col-sm-6 col-md-3">
                     <div class="sub-end-footer">
                         <ul>
                             <h5>Về Shop</h5>
@@ -119,7 +118,7 @@ export default {
                         </ul>
                     </div>
                 </div>
-                <div class="d-flex flex-column">
+                <div class="d-flex col-xs-12 col-sm-6 col-md-3">
                     <div class="social">
                         <h5>Kết nốt với Shopp</h5>
                         <i class="fa-brands fa-facebook"></i>

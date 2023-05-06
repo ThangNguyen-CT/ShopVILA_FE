@@ -93,7 +93,7 @@ export default {
     <loadPage v-if="isLoad"></loadPage>
     <div class="cart-shop container">
         <div class="wrapper-top row">
-            <div class="product-img col-md-6 col-xs-12 col-sm-12">
+            <div class="product-img col-xs-12 col-sm-12 col-md-6">
                 <swiper :style="{
                     '--swiper-navigation-color': '#18191a',
                     '--swiper-pagination-color': '#18191a',
@@ -174,7 +174,7 @@ export default {
         </div>
         <div class="product-suggest mt-4">
             <h5>Gợi ý sản phẩm</h5>
-            <ul class="product-suggest-list d-flex">
+            <ul class="product-suggest-list d-flex flex-wrap">
                 <li class="item-suggest" v-for="(item, index) in productSuggest" v-show="item.slug != this.$route.params.slug"
                     @click="gotoSuggest(item)">
                     <img :src="item.images[0].url" :alt="item.images[0].url">
@@ -307,7 +307,7 @@ span {
 }
 
 .product-commit {
-    width: 500px;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
@@ -352,6 +352,8 @@ span {
     margin: 0 8px;
     height: 100%;
     padding: 5px;
+    width: 180px;
+    margin-top: 4px;
 }
 
 .item-suggest p {

@@ -120,18 +120,13 @@ export default {
 </script>
 <template>
     <loading v-if="checkLoad"></loading>
-    <nav>
-        <a href="/">
-            Trang chủ
-        </a>
-    </nav>
     <div v-if="getlengthCart == 0" class="not-cart">
         <img src="../assets/img/cart.png" alt="cart">
     </div>
-    <div v-else class="payment container">
+    <div v-else class="payment">
         <div class="info-cart">
             <h4>Giỏ hàng</h4>
-            <div class="carts">
+            <div class="cart">
                 <div class="cart-top" v-for="(item, index) in dataCart">
                     <div class="img-cart">
                         <img class="img-cart" :src="item.images[0].url" :alt="item.images[0].url" height="150" width="120">
@@ -307,7 +302,8 @@ export default {
 }
 
 .payment {
-    width: 40%;
+    width: 70%;
+    margin: auto;
     margin-bottom: 16px;
 }
 

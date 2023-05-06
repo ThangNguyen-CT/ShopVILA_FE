@@ -65,17 +65,26 @@ export default {
     components:{
         blogdeltais
     },
+    computed:{
+        getParams(){
+            return this.$route.params.address;
+        }
+    },
     methods: {
 
     }
 }
 </script>
 <template>
+    <div style="margin-left: 18px;">
+        <router-link to="/" style="text-decoration: none; color: #000;">Trang chủ</router-link>
+        <router-link to="/blog" style="text-decoration: none; color: #000;">/Cẩm nang du lịch</router-link>
+        /{{ getParams }}
+    </div>
     <div class="header_blog text-center">
         <h1>Thông tin chi tiết</h1>
     </div>
     <div class="main_blog">
-        <router-link to="/blog">Trở về</router-link>
         <blogdeltais :data_blog="data_blog"></blogdeltais>
     </div>
 </template>

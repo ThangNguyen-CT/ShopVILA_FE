@@ -17,8 +17,8 @@ export default {
 <template>
     <div class="container" v-for="item in data_blog">
         <div class="row" v-if="item.slug == this.address">
-            <div class="col"><img :src="item.img[0]" /> </div>
-            <div class="col">
+            <div class="col-xs-12 col-sm-12 col-md-6"><img :src="item.img[0]" style="width: 600px; border-radius: 10px;" /> </div>
+            <div class="col-xs-12 col-sm-12 col-md-6">
                 <div class="pa">
                     <h1>{{ item.title }}</h1>
                     <p>{{ item.decr }}</p>
@@ -28,19 +28,19 @@ export default {
         <div class="thamquan-box" v-if="item.slug == this.address">
             <h2>Điểm tham quan nổi tiếng</h2>
             <div class="row">
-                <div class="col">
+                <div class="item col-xs-12 col-sm-12 col-md-4">
                     <a href="#">
                         <h3 class="text">{{ item.addressFomus[0] }}</h3>
                         <img :src="item.img[1]" />
                     </a>
                 </div>
-                <div class="col">
+                <div class="item col-xs-12 col-sm-12 col-md-4">
                     <a href="#">
                         <h3 class="text">{{ item.addressFomus[1] }}</h3>
                         <img :src="item.img[2]" />
                     </a>
                 </div>
-                <div class="col">
+                <div class="item col-xs-12 col-sm-12 col-md-4">
                     <a href="#">
                         <h3 class="text">{{ item.addressFomus[2] }}</h3>
                         <img :src="item.img[3]" />
@@ -51,11 +51,12 @@ export default {
     </div>
 </template>
 <style scoped>
-.col {
+.item {
     position: relative;
+    margin-top: 4px;
 }
 
-.col img {
+.item img {
     width: 100%;
     height: 100%;
     border-radius: 10px;
