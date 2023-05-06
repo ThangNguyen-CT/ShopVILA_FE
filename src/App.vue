@@ -12,6 +12,7 @@ export default {
 }
 </script>
 <template>
+    <h1>Test B1906598</h1>
     <headerVue></headerVue>
     <div class="main">
         <router-view></router-view>
