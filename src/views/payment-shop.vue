@@ -120,6 +120,7 @@ export default {
 </script>
 <template>
     <loading v-if="checkLoad"></loading>
+    <router-link to="/" style="margin-left: 18px; text-decoration: none; color: #000;">Trang chủ/</router-link>Thanh toán
     <div v-if="getlengthCart == 0" class="not-cart">
         <img src="../assets/img/cart.png" alt="cart">
     </div>

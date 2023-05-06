@@ -51,16 +51,16 @@ export default {
 </script>
 <template>
   <loadPage v-if="checkload"></loadPage>
-  <swiper :slidesPerView="6" :spaceBetween="5" :freeMode="true" :pagination="{
+  <swiper :slidesPerView="4" :spaceBetween="5" :freeMode="true" :pagination="{
       clickable: true,
     }" :modules="modules" class="mySwiper">
     <swiper-slide class="product-item" v-for="(item, index) in productTopSale" v-show="item.numViews">
       <div @click="gotoProductDetails(item)" class="product-info d-flex flex-column w-100">
         <img :src="item.images[0].url" :alt="item.images[0].public_id">
         <span class="product-name">{{ item.title }}</span>
+        <span class="view">Lượt xem : {{item.numViews}}</span>
         <div class="product-price">
           <span class="price">{{ item.price }}₫</span>
-          <!-- <span class="percent">-36%</span> -->
         </div>
       </div>
     </swiper-slide>
@@ -102,14 +102,16 @@ export default {
   mix-blend-mode: darken;
   border-radius: 20px;
 }
-
+.view{
+  font-size: 10px;
+  color: var(--color--main--);
+}
 .product-name {
-  display: -webkit-box;
-  max-width: 100%;
+  max-width: 90%;
   height: 50px;
   margin: 0 auto;
   font-size: 14px;
-  line-height: 1;
+  line-height:  3;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
