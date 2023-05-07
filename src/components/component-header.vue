@@ -53,7 +53,7 @@ export default {
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none logo">
-                    <img src="../assets/img/anh.jpg" alt="logo">
+                    <img src="../assets/img/logo.jpg" alt="logo">
                 </a>
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li><a href="/" class="nav-link px-2 text-white">Trang chủ</a></li>
@@ -64,7 +64,7 @@ export default {
                     <li><router-link to="/blog" class="nav-link px-2 text-white">Cẩm nang du lịch</router-link></li>
                     <li><a href="#" class="nav-link px-2 text-white">Tin tức</a></li>
                 </ul>
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 d-flex" @submit.prevent="gotolistproduct()">
+                <form class="d-flex align-items-center mb-2 mb-lg-0" @submit.prevent="gotolistproduct()">
                     <div>
                         <input class="form-control form-control-dark input-search" type="search" aria-label="Search"
                             placeholder="Tìm kiếm sản phẩm" v-model="searchproduct">
@@ -93,9 +93,9 @@ export default {
 }
 
 .logo img {
-    width: 200px;
+    width: 100%;
     height: 40px;
-    border-radius: 10px;
+    border-radius: 50%;
 }
 
 .navbar-nav li span,

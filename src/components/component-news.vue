@@ -14,7 +14,7 @@ export default {
 }
 </script>
 <template>
-    <div class="news row w-100">
+    <div class="news row w-100" style="margin: auto;">
         <div class="news-tralver col-xs-12 col-sm-12 col-md-6">
             <div class="news-header d-flex justify-content-between">
                 <h3 class="news-heading">

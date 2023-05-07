@@ -41,7 +41,7 @@ export default {
                     <p class="ellipsis" style="width: 200px;">Mã đơn hàng : {{ item._id }}</p><br>
                     <p class="ellipsis" style="width: 200px;">Khách hàng :{{ item.name }}</p><br>
                     <p class="ellipsis" style="width: 100px;">SDT : {{ item.m }}</p><br>
-                    <p class="ellipsis" style="width: 150px;">Gmail : {{ item.e }}</p><br>
+                    <!-- <p class="ellipsis" style="width: 150px;">Gmail : {{ item.e }}</p><br> -->
                     <p class="ellipsis" style="width: 300px;">Địa chỉ nhận hàng : {{ item.address }}</p><br>
                     <p>Trạng thái đơn hàng : {{ item.orderStatus }}</p><br>
                     <p>Phương thức thanh toán : {{ item.paymentIntent }}</p><br>

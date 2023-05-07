@@ -58,7 +58,7 @@ export default {
             </ul>
         </div>
         <div class="end-footer">
-            <div class="d-flex flex-wrap" style="padding: 32px 12px 0px 12px;">
+            <div class="d-flex flex-wrap justify-content-around" style="padding: 32px 12px 0px 12px;">
                 <div class="d-flex col-xs-12 col-sm-6 col-md-3">
                     <div class="sub-end-footer">
                         <ul>
@@ -67,7 +67,7 @@ export default {
                                 <small>Hotline: 8h-22h</small>
                                 <p class="numberphone">0 9 0 6 8 6 8 6 8</p>
                             </li>
-                            <li class="email">Email:thangnguyen1333@gmail.com</li>
+                            <li class="email">Email: vali.boutique.2k1@gmail.com</li>
                         </ul>
                     </div>
                 </div>
@@ -108,7 +108,7 @@ export default {
                         </ul>
                     </div>
                 </div>
-                <div class="d-flex col-xs-12 col-sm-6 col-md-3">
+                <div class="d-flex col-xs-12 col-sm-12 col-md-3">
                     <div class="sub-end-footer">
                         <ul>
                             <h5>Về Shop</h5>
@@ -121,7 +121,7 @@ export default {
                 <div class="d-flex col-xs-12 col-sm-6 col-md-3">
                     <div class="social">
                         <h5>Kết nốt với Shopp</h5>
-                        <i class="fa-brands fa-facebook"></i>
+                        <a href="https://www.facebook.com/vilaboutique2k1/" class="text-white"><i class="fa-brands fa-facebook"></i></a>
                         <i class="fa-brands fa-youtube"></i>
                         <i class="fa-brands fa-instagram"></i>
                     </div>
