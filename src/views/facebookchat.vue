@@ -8,7 +8,7 @@ export default {
 </script>
 <template>
     <div class="chat">
-        <VueFacebookChat class="chat-facebook" page-id="116470054728075" theme-color="#0084ff" />
+        <VueFacebookChat class="chat-facebook" page-id="252538887258412" theme-color="#0084ff" />
     </div>
 </template>
 <style scoped>
