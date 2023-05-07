@@ -60,6 +60,12 @@ const routes = [{
             import ("@/views/policy-shop.vue"),
     },
     {
+        path: "/chat",
+        name: "chat",
+        component: () =>
+            import ("@/views/facebookchat.vue"),
+    },
+    {
         path: "/blog/deltais/:address",
         name: "blog_deltais",
         component: () =>

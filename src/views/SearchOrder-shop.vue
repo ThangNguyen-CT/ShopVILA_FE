@@ -4,7 +4,7 @@ import loadPage from '../components/loadPage.vue';
 export default {
     data() {
         return {
-            checkload : false,
+            checkload: false,
             sdt: '',
             order: {}
         }
@@ -35,8 +35,8 @@ export default {
             <input type="text" name="phone" id="phone_search" placeholder="Nhập số điện thoại" v-model="sdt">
             <button type="submit" class="btn btn-primary">Tìm</button>
         </form>
-        <div class="wrapper-order">
-            <div v-for="(item, index) in order" class="order" v-if="order.length != 0">
+        <div class="wrapper-order" v-if="order.length != 0">
+            <div v-for="(item, index) in order" class="order">
                 <div class="order-info">
                     <p class="ellipsis" style="width: 200px;">Mã đơn hàng : {{ item._id }}</p><br>
                     <p class="ellipsis" style="width: 200px;">Khách hàng :{{ item.name }}</p><br>
@@ -49,22 +49,24 @@ export default {
                 </div>
                 <br>
             </div>
-            <div v-else>
-                <h6 class="text-center">Chưa có đơn hàng</h6>
-            </div>
+        </div>
+        <div v-else>
+            <h6 class="text-center">Chưa có đơn hàng</h6>
         </div>
     </div>
 </template>
 <style scoped>
-.order-info p{
+.order-info p {
     margin: 0;
     padding: 0;
 }
+
 .ellipsis {
     white-space: nowrap;
     overflow: hidden;
-    text-overflow:ellipsis;
+    text-overflow: ellipsis;
 }
+
 .container {
     height: 500px;
 }
@@ -73,18 +75,21 @@ export default {
     display: flex;
     justify-content: center;
 }
-
+.phone button{
+    margin-bottom: 10px;
+}
 .phone input {
     width: 70%;
     margin: 0px 8px 10px 0px
 }
-
-.wrapper-order {
+.order{
     padding: 10px;
-    background-color: aliceblue;
+    background-color: #67bbd0;
+}
+.wrapper-order {
+    margin-top: 10px;
     overflow-y: scroll;
     height: 400px;
-    border-radius: 10px;
 }
 
 .order {

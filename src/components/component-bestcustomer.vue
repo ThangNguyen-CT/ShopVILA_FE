@@ -1,5 +1,5 @@
 <template>
-    <div class="best-customer">
+    <div class="best-customer mb-4">
         <h3 class="text-center">Khách hàng của chúng tôi</h3>
         <div class="customer-mine-box row">
 

@@ -46,9 +46,9 @@ export default {
             Trang chủ / {{ contentPolicy }}
         </router-link>
     </nav>
-    <h1 class="text-center">Thông tin chính sách</h1>
-    <div class="page_policy d-flex">
-        <div class="page_policy_left">
+    <h1 class="text-center mb-4">Thông tin chính sách</h1>
+    <div class="page_policy d-flex flex-wrap">
+        <div class="page_policy_left col-xs-12 col-sm-12 col-md-5">
             <ul class="list_item_policy">
                 <li class="item_policy active" @click="link_policy('policyBH')" data="policyBH" data-value="Chính sách bảo hành">
                     <router-link to="">
@@ -82,7 +82,7 @@ export default {
                 </li>
             </ul>
         </div>
-        <div class="page_policy_right">
+        <div class="page_policy_right col-xs-12 col-sm-12 col-md-7">
             <component :is="getpolicy"></component>
         </div>
     </div>
@@ -93,14 +93,14 @@ export default {
     text-decoration: none;
 
 }
-.page_policy_left {
-    width: 700px;
-}
+/* .page_policy_left {
+    width: 100%;
+} */
 
 .list_item_policy .item_policy {
     list-style: none;
     padding: 0;
-    width: 400px;
+    width: 300px;
     height: 60px;
     margin-bottom: 8px;
     background-color: #e8e8e8;

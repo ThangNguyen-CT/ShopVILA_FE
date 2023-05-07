@@ -44,4 +44,7 @@ export default {
     width: 100%;
     height: 100%;
 }
+.list-product h1{
+    height: 211px;
+}
 </style>
