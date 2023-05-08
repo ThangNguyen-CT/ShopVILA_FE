@@ -6,6 +6,7 @@ export default {
     data() {
         return {
             products: [],
+            isLoad: false
 
         }
     },
@@ -19,7 +20,9 @@ export default {
     methods: {
         async getdata() {
             try {
+                this.isLoad = true;
                 this.products = await ProductService.getAll(`/?category=${this.category}&limit=4`);
+                this.isLoad = false;
             } catch (error) {
                 console.log(error);
             }
@@ -36,6 +39,7 @@ export default {
 }
 </script>
 <template>
+    <loadPage v-if="isLoad"></loadPage>
     <div class="products">
         <componentBanner :img="imagesAds">
         </componentBanner>

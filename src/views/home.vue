@@ -8,7 +8,6 @@ import loadPage from '../components/loadPage.vue';
 export default {
     data() {
         return {
-            isLoad: false
         }
     },
     components: {
@@ -19,12 +18,11 @@ export default {
 
     },
     mounted() {
-
+        window.scroll(0,0);
     }
 }
 </script>
 <template>
-    <loadPage v-if="isLoad"></loadPage>
     <div class="container">
         <componentBanner :img="`https://media.mia.vn/uploads/sale-off-up-to-50-1680656408.jpg`"></componentBanner>
         <div class="top-sale">
