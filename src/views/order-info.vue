@@ -16,15 +16,15 @@ export default {
     methods: {
         async getorderbyid() {
             try {
-                if (this.id != '') {
-                    this.checkload = true;
-                    this.orderinfo = await OrderService.getbyId(this.id);
-                    this.showcheck = true;
-                    this.checkload = false;
-                }
+                this.checkload = true;
+                this.orderinfo = await OrderService.getbyId(this.id);
+                this.showcheck = true;
+                this.checkload = false;
             } catch (error) {
                 this.checkload = false;
                 this.showcheck = false;
+                alert("Không tìm thấy đơn hàng này");
+                this.id = '';
                 console.log(error);
             }
         }
@@ -35,29 +35,31 @@ export default {
     <loadPage v-if="checkload"></loadPage>
     <div class="container">
         <h3>Kiểm tra đơn hàng</h3>
-        <form  class="idorder" @submit.prevent="getorderbyid()">
-            <input type="text" name="idorder" id="idorder" placeholder="Nhập mã đơn hàng..." v-model="id">
+        <form class="idorder" @submit.prevent="getorderbyid()">
+            <input type="text" name="idorder" id="idorder" placeholder="Nhập mã đơn hàng..." v-model="id" required>
             <button class="btn btn-primary" type="submit" style="margin-bottom: 8px;">Tìm</button>
         </form>
-        <div v-if="showcheck" class="order">
-            <div class="order-info">
-                <p class="ellipsis" style="width: 200px;"><span>Mã đơn hàng : </span>{{ orderinfo._id }}</p><br>
-                <p class="ellipsis" style="width: 200px;"><span>Khách hàng </span>{{ orderinfo.name }}</p><br>
-                <p class="ellipsis" style="width: 100px;"><span>SDT :</span>{{ orderinfo.m }}</p><br>
-                <p class="ellipsis" style="width: 300px;"><span>Địa chỉ nhận hàng :</span>{{ orderinfo.address }}</p><br>
-                <p><span>Trạng thái đơn hàng :</span>{{ orderinfo.statusPayment }}</p><br>
-                <p><span>Trạng thái thanh toán :</span>{{ orderinfo.orderStatus }}</p><br>
-                <p><span>Phương thức thanh toán :</span>{{ orderinfo.paymentIntent }}</p><br>
+        <div class="order">
+            <div v-if="showcheck" class="order-info">
+                <span class="ellipsis" style="width: 200px;"><span>Mã đơn hàng : </span>{{ orderinfo._id }}</span><br>
+                <span class="ellipsis" style="width: 200px;"><span>Khách hàng </span>{{ orderinfo.name }}</span><br>
+                <span class="ellipsis" style="width: 100px;"><span>SDT :</span>{{ orderinfo.m }}</span><br>
+                <span class="ellipsis" style="width: 300px;"><span>Địa chỉ nhận hàng :</span>{{ orderinfo.address
+                }}</span><br>
+                <span><span>Trạng thái đơn hàng :</span>{{ orderinfo.statusPayment }}</span><br>
+                <span><span>Trạng thái thanh toán :</span>{{ orderinfo.orderStatus }}</span><br>
+                <span><span>Phương thức thanh toán :</span>{{ orderinfo.paymentIntent }}</span><br>
                 <div v-for="(item, index) in orderinfo.products">
-                    <p><span>Sản phẩm {{ index + 1 }} </span></p>
-                    <p><span>Mã sản phẩm : </span>{{ item.product }} x{{ item.count }}</p>
-                </div>
-                <p><span>Tổng tiền : </span>{{ orderinfo.totalprice }} đ</p><br>
+                    <span><span>Sản phẩm {{ index + 1 }} : </span></span><br>
+                    <span><span>Mã sản phẩm : </span>{{ item.product }} X {{ item.count }}</span>
+                </div><br>
+                <span><span>Tổng tiền : </span>{{ orderinfo.totalprice }} đ</span>
+            </div>
+            <div v-else style="height: 165px;">
+
             </div>
         </div>
-        <div v-else style="height: 205px;">
-            <h6 class="text-center">Chưa có đơn hàng</h6>
-        </div>
+
     </div>
 </template>
 <style scoped>
@@ -70,17 +72,21 @@ export default {
     width: 70%;
     margin: 0px 8px 10px 0px
 }
-.order-info{
+
+.order-info {
     height: 100%;
-}
-.order-info p {
-    margin: 0;
-    padding: 0;
-
+    background-color: #eae8e8;
+    padding: 10px;
+    border-radius: 10px;
 }
 
-.order-info p span {
-    color:#f69478;
+.order-info span {
+    display: inline-block;
+}
+
+.order-info span span {
+    font-weight: 700;
+    color: #2016e3;
 }
 
 .ellipsis {
@@ -93,9 +99,7 @@ export default {
     height: 100%;
 }
 
-.order {    
+.order {
     padding: 10px;
-    border:1px solid #888888;
     height: 100%;
-}
-</style>
+}</style>

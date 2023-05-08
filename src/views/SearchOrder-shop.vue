@@ -15,11 +15,9 @@ export default {
     methods: {
         async getorder() {
             try {
-                if (this.sdt != '') {
-                    this.checkload = true;
-                    this.order = await OrderService.get(this.sdt);
-                    this.checkload = false;
-                }
+                this.checkload = true;
+                this.order = await OrderService.get(this.sdt);
+                this.checkload = false;
             } catch (error) {
                 console.log(error);
             }
@@ -32,44 +30,36 @@ export default {
     <div class="container">
         <h3>Lịch sữ đặt hàng</h3>
         <form class="phone" @submit.prevent="getorder()">
-            <input type="text" name="phone" id="phone_search" placeholder="Nhập số điện thoại" v-model="sdt">
+            <input type="phone" name="phone" id="phone_search" placeholder="Nhập số điện thoại..." v-model="sdt" required>
             <button type="submit" class="btn btn-primary">Tìm</button>
         </form>
-        <div class="wrapper-order" v-if="order.length != 0">
-            <div v-for="(item, index) in order" class="order">
+        <div class="wrapper-order">
+            <div v-for="(item, index) in order" class="order" v-if="order.length != 0">
                 <div class="order-info">
-                    <p class="ellipsis" style="width: 200px;">Mã đơn hàng : {{ item._id }}</p><br>
-                    <p class="ellipsis" style="width: 200px;">Khách hàng :{{ item.name }}</p><br>
-                    <p class="ellipsis" style="width: 100px;">SDT : {{ item.m }}</p><br>
-                    <p class="ellipsis" style="width: 300px;">Địa chỉ nhận hàng : {{ item.address }}</p><br>
-                    <p>Ngày đặt : {{ item.createdAt }}</p><br>
-                    <p>Trạng thái đơn hàng : {{ item.orderStatus }}</p><br>
-                    <p><span>Trạng thái thanh toán :</span>{{ item.orderStatus }}</p><br>
-                    <p>Phương thức thanh toán : {{ item.paymentIntent }}</p><br>
-                    <p>Tổng tiền : {{ item.totalprice }} đ</p><br>
+                    <span class="ellipsis" style="width: 200px;"> <span>Mã đơn hàng : </span>{{ item._id }}</span><br>
+                    <span class="ellipsis" style="width: 200px;"> <span>Khách hàng :</span>{{ item.name }}</span><br>
+                    <span class="ellipsis" style="width: 100px;"> <span>SDT : </span>{{ item.m }}</span><br>
+                    <span class="ellipsis" style="width: 300px;"> <span>Địa chỉ nhận hàng : </span>{{ item.address
+                    }}</span><br>
+                    <span> <span>Ngày đặt : </span>{{ item.createdAt }}</span><br>
+                    <span> <span>Trạng thái đơn hàng : </span>{{ item.orderStatus }}</span><br>
+                    <span> <span>Trạng thái thanh toán :</span>{{ item.statusPayment }}</span><br>
+                    <span> <span>Phương thức thanh toán : </span>{{ item.paymentIntent }}</span><br>
+                    <span> <span>Tổng tiền : </span>{{ item.totalprice }} đ</span>
                 </div>
-                <br>
             </div>
-        </div>
-        <div v-else>
-            <h6 class="text-center">Chưa có đơn hàng</h6>
+            <div v-else>
+                <h6 class="text-center" style="height: 175px;">Không tìm thấy thông tin</h6>
+            </div>
         </div>
     </div>
 </template>
 <style scoped>
-.order-info p {
-    margin: 0;
-    padding: 0;
-}
-
 .ellipsis {
+    display: inline-block;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-.container {
-    height: 500px;
 }
 
 .phone {
@@ -88,18 +78,20 @@ export default {
 
 .order {
     padding: 10px;
-    background-color: #67bbd0;
+    background-color: #eae8e8;
+    border-bottom: 1px solid #888888;
+}
+
+.order span span {
+    font-weight: 700;
+    color: #2016e3;
 }
 
 .wrapper-order {
-    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
     overflow-y: scroll;
-    height: 400px;
-}
-
-.order {
-    border-bottom: 1px solid #888888;
-
+    height: 450px;
 }
 
 .wrapper-order::-webkit-scrollbar {
@@ -113,4 +105,5 @@ export default {
 .wrapper-order::-webkit-scrollbar-thumb {
     background-color: #000;
     border-radius: 50px;
-}</style>
+}
+</style>
