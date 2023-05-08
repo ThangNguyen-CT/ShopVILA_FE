@@ -44,6 +44,7 @@ export default {
                     <p class="ellipsis" style="width: 300px;">Địa chỉ nhận hàng : {{ item.address }}</p><br>
                     <p>Ngày đặt : {{ item.createdAt }}</p><br>
                     <p>Trạng thái đơn hàng : {{ item.orderStatus }}</p><br>
+                    <p><span>Trạng thái thanh toán :</span>{{ item.orderStatus }}</p><br>
                     <p>Phương thức thanh toán : {{ item.paymentIntent }}</p><br>
                     <p>Tổng tiền : {{ item.totalprice }} đ</p><br>
                 </div>
@@ -75,17 +76,21 @@ export default {
     display: flex;
     justify-content: center;
 }
-.phone button{
+
+.phone button {
     margin-bottom: 10px;
 }
+
 .phone input {
     width: 70%;
     margin: 0px 8px 10px 0px
 }
-.order{
+
+.order {
     padding: 10px;
     background-color: #67bbd0;
 }
+
 .wrapper-order {
     margin-top: 10px;
     overflow-y: scroll;
