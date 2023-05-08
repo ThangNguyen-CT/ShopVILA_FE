@@ -54,7 +54,7 @@ export default {
   <swiper :slidesPerView="4" :spaceBetween="5" :freeMode="true" :pagination="{
       clickable: true,
     }" :modules="modules" class="mySwiper">
-    <swiper-slide class="product-item" v-for="(item, index) in productTopSale" v-show="item.numViews > 100">
+    <swiper-slide class="product-item" v-for="(item, index) in productTopSale" v-show="item.numViews > 50">
       <div @click="gotoProductDetails(item)" class="product-info d-flex flex-column w-100">
         <img :src="item.images[0].url" :alt="item.images[0].public_id">
         <span class="product-name">{{ item.title }}</span>
