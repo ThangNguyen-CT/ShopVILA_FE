@@ -83,7 +83,6 @@ export default {
     },
     mounted() {
         this.getdatabyId();
-        window.scrollTo(0, 0);
     }
 }
 
