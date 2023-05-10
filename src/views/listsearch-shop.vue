@@ -26,7 +26,8 @@ export default {
     },
     mounted(){
         this.getdata();
-    }
+        window.scrollTo(0, 0);
+    } 
 }
 </script>
 <template>

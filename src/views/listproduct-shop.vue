@@ -101,7 +101,8 @@ export default {
         }
     },
     mounted() {
-        this.getallforCategory('', '');
+        this.getallforCategory('', '');  
+        window.scrollTo(0, 0);
     }
 }
 </script>

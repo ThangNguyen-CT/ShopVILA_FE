@@ -50,6 +50,7 @@ export default {
     },
     mounted() {
         this.getDataOrder();
+        window.scrollTo(0, 0);
     }
 }
 </script>

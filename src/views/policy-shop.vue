@@ -36,6 +36,7 @@ export default {
     },
     mounted(){
         this.link_policy(this.$route.params.slug);
+        window.scrollTo(0, 0);
     }
 }
 </script>

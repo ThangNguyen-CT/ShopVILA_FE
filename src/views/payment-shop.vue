@@ -115,6 +115,7 @@ export default {
     },
     mounted() {
         this.getaddress();
+        window.scrollTo(0, 0);
     }
 }
 </script>

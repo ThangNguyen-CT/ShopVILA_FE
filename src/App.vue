@@ -10,9 +10,7 @@ export default {
     components: {
         headerVue, footerVue
     },
-    mounted() {
-        window.scrollTo(0, 0);
-    }
+
 }
 </script>
 <template>

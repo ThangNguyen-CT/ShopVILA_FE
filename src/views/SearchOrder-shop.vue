@@ -22,6 +22,9 @@ export default {
                 console.log(error);
             }
         }
+    },
+    mounted(){
+        window.scrollTo(0, 0);
     }
 }
 </script>
