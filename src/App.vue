@@ -8,10 +8,10 @@ export default {
         }
     },
     components: {
-        headerVue,footerVue
+        headerVue, footerVue
     },
-    mounted(){
-        window.scrollTo(0,0);
+    mounted() {
+        window.scrollTo(0, 0);
     }
 }
 </script>
