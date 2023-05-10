@@ -169,6 +169,8 @@ export default {
                             </li>
                             <li title="Purple" style="background-color: purple;" @click="setFilter($event, 'color=Purple')">
                             </li>
+                            <li title="Red" style="background-color: red;" @click="setFilter($event, 'color=Red')">
+                            </li>
                         </ul>
                     </div>
                     <div class="filter-brand">
