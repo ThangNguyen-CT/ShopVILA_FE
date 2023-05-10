@@ -14,6 +14,9 @@ export default {
         componentTopSale, componentBanner, componentProduct, componentNews,
         componentbetcustomer, loadPage
     },
+    mounted() {
+        window.scrollTo(0, 0);
+    }
 }
 </script>
 <template>

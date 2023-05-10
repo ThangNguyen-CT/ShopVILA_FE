@@ -4,6 +4,9 @@ export default {
         pushaddress(params) {
             this.$router.push({ path: `/blog/deltais/${params}` });
         }
+    },
+    mounted() {
+        window.scrollTo(0, 0);
     }
 }
 </script>
@@ -65,7 +68,6 @@ export default {
             </div>
         </div>
     </div>
-
 </template>
 
 <style scoped>
@@ -73,9 +75,7 @@ export default {
     padding: 0 52px;
 }
 
-.list_blogs {
-   
-}
+.list_blogs {}
 
 .box {
     border-radius: 10px;
