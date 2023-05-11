@@ -49,9 +49,9 @@ export default {
                 <span class="ellipsis" style="width: 100px;"><span>SDT :</span>{{ orderinfo.m }}</span><br>
                 <span class="ellipsis" style="width: 300px;"><span>Địa chỉ nhận hàng :</span>{{ orderinfo.address
                 }}</span><br>
-                <span><span>Trạng thái đơn hàng :</span>{{ orderinfo.statusPayment }}</span><br>
-                <span><span>Trạng thái thanh toán :</span>{{ orderinfo.paymentIntent }}</span><br>
-                <span><span>Phương thức thanh toán :</span>{{ orderinfo.orderStatus }}</span><br>
+                <span><span>Trạng thái đơn hàng :</span>{{ orderinfo.orderStatus }}</span><br>
+                <span><span>Trạng thái thanh toán :</span>{{ orderinfo.statusPayment }}</span><br>
+                <span><span>Phương thức thanh toán :</span>{{ orderinfo.paymentIntent }}</span><br>
                 <div v-for="(item, index) in orderinfo.products">
                     <span><span>Sản phẩm {{ index + 1 }} : </span></span><br>
                     <span><span>Mã sản phẩm : </span>{{ item.product }} X {{ item.count }}</span>

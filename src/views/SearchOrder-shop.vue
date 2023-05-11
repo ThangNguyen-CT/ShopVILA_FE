@@ -46,8 +46,8 @@ export default {
                     }}</span><br>
                     <span> <span>Ngày đặt : </span>{{ item.createdAt }}</span><br>
                     <span> <span>Trạng thái đơn hàng : </span>{{ item.orderStatus }}</span><br>
-                    <span> <span>Trạng thái thanh toán :</span>{{ item.statusPayment }}</span><br>
-                    <span> <span>Phương thức thanh toán : </span>{{ item.paymentIntent }}</span><br>
+                    <span> <span>Trạng thái thanh toán :</span>{{ item.paymentIntent }}</span><br>
+                    <span> <span>Phương thức thanh toán : </span>{{ item.statusPayment }}</span><br>
                     <span> <span>Tổng tiền : </span>{{ item.totalprice }} đ</span>
                 </div>
             </div>
