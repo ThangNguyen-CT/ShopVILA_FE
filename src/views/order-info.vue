@@ -45,7 +45,7 @@ export default {
         <div class="order">
             <div v-if="showcheck" class="order-info">
                 <span class="ellipsis" style="width: 200px;"><span>Mã đơn hàng : </span>{{ orderinfo._id }}</span><br>
-                <span class="ellipsis" style="width: 200px;"><span>Khách hàng </span>{{ orderinfo.name }}</span><br>
+                <span class="ellipsis" style="width: 200px;"><span>Khách hàng :</span>{{ orderinfo.name }}</span><br>
                 <span class="ellipsis" style="width: 100px;"><span>SDT :</span>{{ orderinfo.m }}</span><br>
                 <span class="ellipsis" style="width: 300px;"><span>Địa chỉ nhận hàng :</span>{{ orderinfo.address
                 }}</span><br>

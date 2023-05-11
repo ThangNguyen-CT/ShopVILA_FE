@@ -66,7 +66,7 @@ export default {
                 <h6>Thông tin của bạn</h6>
                 <span>Họ và tên :{{ dataOrder.info.name }}</span><br>
                 <span>Email : {{ dataOrder.info.e }}</span><br>
-                <span>Số địa thoại : {{ dataOrder.info.m }}</span><br>
+                <span>Số điện thoại : {{ dataOrder.info.m }}</span><br>
                 <span>Địa chỉ nhận hàng : {{ dataOrder.info.address }}</span><br>
                 <span>Ghi chú : {{ dataOrder.info.des }}</span>
             </div>
