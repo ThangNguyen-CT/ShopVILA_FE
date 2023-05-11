@@ -138,7 +138,7 @@ export default {
                                 Dưới
                                 1 triệu</li>
                             <li class="item-filter-price" title="Từ 1 đến 2 triệu"
-                                @click="setFilterPrice($event, '100000-2000000')">Từ 1 đến 2 triệu</li>
+                                @click="setFilterPrice($event, '1000000-2000000')">Từ 1 đến 2 triệu</li>
                             <li class="item-filter-price" title="Từ 2 đến 4 triệu"
                                 @click="setFilterPrice($event, '2000000-4000000')">Từ 2 đến 4 triệu</li>
                             <li class="item-filter-price" title="Từ 4 đến 10 triệu"
